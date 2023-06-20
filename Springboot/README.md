@@ -89,6 +89,11 @@ Create a Symlink for the Nginx Configuration
 ```
 sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
 ```
+To run Springboot in background service 
+```bash
+nohup java -jar bmi-1.0.jar &
+```
 Restart Nginx Service
 ```
 sudo systemctl service nginx restart
+```
