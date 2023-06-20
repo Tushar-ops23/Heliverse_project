@@ -1,70 +1,85 @@
-# Getting Started with Create React App
+# Heliverse_project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## React-js Setup Instructions
 
-## Available Scripts
+Follow the steps below to set up the React-js application:
 
-In the project directory, you can run:
+## Step 1: Clone the React-js Repository
+- 
+  ```bash
+  git clone https://github.com/Tushar-ops23/React-js.git
+  
+## Step 2: Install the Nginx web server
+- 
+  ```bash
+  apt update
+  apt install nginx
 
-### `npm start`
+ ## Step 3: Download and execute the NVM installation script  
+- Install NVM (Node Version Manager)
+  ```bash
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+ 
+ ## Step 4: Reload Bashrc File
+ - Reloads the bashrc file to apply any changes made.
+   ```bash
+   source ~/.bashrc
+ 
+ ## Step 5: Install Node.js
+ - List the available remote Node.js versions:
+   ```bash 
+   nvm list-remote
+ - Installs Node.js version 18.16.0 using NVM.
+   ```bash
+   nvm install v18.16.0
+## Step 6: Set Up React-js Application
+ - Change the current working directory to the "React-js" folder:
+   ```bash
+   cd React-js/
+ - Run the build script for the React.js application
+   ```bash
+   npm install react-script
+ - Runs the build script for the React.js application.
+   ```bash
+   npm run build
+ - Changes the current working directory to the "build" folder.
+   ```bash
+   cd build/
+ - Copies all files and directories from the "build" folder to the "/var/www/html/" directory.
+   ```bash
+   cp -r * /var/www/html/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Step 7: Configure Nginx 
+- Changes the current working directory to the "/etc/nginx/sites-available/" directory.
+   ```bash
+   cd /etc/nginx/sites-available/
+ - Edit the configuration file.
+   ```bash
+   nano default
+   ```
+   ```bash
+    server {
+    listen 80;
+    root /var/www/html;
+    index index.html index.htm index.nginx-debian.html;
+    server_name tushar.world;
+    location / {
+        try_files $uri $uri/ /index.html;
+       }
+     location ~* \.(js|css)$ {
+        root /var/www/html; }
+    }
+    
+ - Check the conf. file 
+   ```bash
+   nginx -t
+ - Restart Nginx
+   ```bash
+   systemtl restart nginx
+   ``` 
+    
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
