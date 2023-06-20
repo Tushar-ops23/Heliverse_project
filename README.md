@@ -29,6 +29,9 @@ Follow the steps below to deploy a React application on the root domain:
    - Once the DNS propagation period is over, visit "tushar.world" in a web browser.
    - The React application should be accessible on the root domain.
 
+![Screenshot (119)](https://github.com/Tushar-ops23/Heliverse_project/assets/127124069/fde3d8e5-48fb-4417-b809-82a94cc821be)
+
+
 ## Deploying AngularJS on a Subdirectory of the Domain (tushar.world/dashboard)
 
 Follow the steps below to deploy an AngularJS application on a subdirectory of the domain:
@@ -60,6 +63,9 @@ Follow the steps below to deploy an AngularJS application on a subdirectory of t
 8. Access the AngularJS application:
    - Once the DNS propagation period is over, visit "tushar.world/dashboard" in a web browser.
    - The AngularJS application should be accessible on the subdirectory URL.
+
+![Screenshot (117)](https://github.com/Tushar-ops23/Heliverse_project/assets/127124069/82dee49f-281a-4f76-b4a2-63a1a4143f3e)
+
 
 ## Deploying Spring Boot Application on Subdirectory of Domain
 
@@ -95,6 +101,11 @@ Follow the steps below to deploy an AngularJS application on a subdirectory of t
 
 10. Restart the Nginx web server:
     - Restart the Nginx service using the command `systemctl restart nginx`.
+
+
+
+
+![Screenshot (118)](https://github.com/Tushar-ops23/Heliverse_project/assets/127124069/0b0b8775-b39c-4ba6-8931-78122529065a)
 
 
 
